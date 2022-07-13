@@ -1,14 +1,8 @@
 "use strict";
-import express from "express";
-const app = express();
+import { app } from "./routes";
 const PORT: number | string = process.env.PORT || 3000;
 
-app.get("/", (req: any, res: any) => {
-  res.json({
-    msg: "Hello, World!",
-  });
-});
-
 app.listen(PORT, () => {
+  // eslint-disable-next-line
   console.log(`Listening on PORT: ${PORT}`);
 });
