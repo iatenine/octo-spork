@@ -7,6 +7,7 @@ describe("endpoint smoke tests", () => {
   let server;
 
   beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     server = app.listen(PORT, () => {});
   });
 

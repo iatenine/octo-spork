@@ -12,11 +12,11 @@
     "prepare": "husky install",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "postpack": "pinst --enable",
+    "format": "npx prettier -w ./src/* ./__tests__/*"
   },
   "eslintIgnore": [
-    "dist/*",
-    "__tests__/*"
+    "dist/*"
   ],
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "@tsconfig/node16": "^1.0.3",
     "@types/express": "^4.17.13",
     "@types/jest": "^28.1.5",
+    "@types/node": "^18.0.3",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "babel-jest": "^28.1.2",
@@ -55,7 +56,8 @@
     }
   },
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "prettier": "^2.7.1"
   },
   "private": false
 }
