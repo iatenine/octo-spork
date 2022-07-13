@@ -1,0 +1,35 @@
+{
+  "name": "octo-spork",
+  "version": "1.0.0",
+  "description": "Enable users to quickly and intuitively find information regarding their local representatives, upcoming elections, voting patterns and other civic information",
+  "main": "server.js",
+  "scripts": {
+    "start": "npx ts-node ./src/server.ts",
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iatenine/octo-spork.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "typescript",
+    "government"
+  ],
+  "author": "Jack Linhart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iatenine/octo-spork/issues"
+  },
+  "homepage": "https://github.com/iatenine/octo-spork#readme",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/express": "^4.17.13",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
