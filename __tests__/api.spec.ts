@@ -9,7 +9,7 @@ jest.mock("../src/services/representatives", () => {
 
 describe("endpoint smoke tests", () => {
   const HOST = "http://localhost";
-  const PORT = 3000;
+  const PORT = 3001;
   let server;
 
   beforeAll(() => {
