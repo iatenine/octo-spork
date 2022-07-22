@@ -1,6 +1,7 @@
 "use strict";
 import { app } from "./routes";
-const PORT: number | string = process.env.PORT || 3000;
+const PORT: number | string = process.env.PORT || 3001;
+console.log(PORT);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line
