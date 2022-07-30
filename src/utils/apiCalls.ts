@@ -40,6 +40,12 @@ export const getChamberMembers = async (
   return data.results[0].members;
 };
 
+export const getMemberVotes = async (id: string) => {
+  const endpoint = `congress/v1/members/${id}/votes.json`;
+  const response = await makePropublicaCall(endpoint);
+  return response.results;
+};
+
 export const makePropublicaCall = async (endpoint: string) => {
   const options = {
     method: "GET",
