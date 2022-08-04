@@ -5,7 +5,7 @@ import {
   getRepresentativeById,
 } from "../services/representatives";
 const router = express.Router();
-import { logger } from "../utils/logger"
+import { logger } from "../utils/logger";
 
 router.get("/", async (req, res) => {
   try {
