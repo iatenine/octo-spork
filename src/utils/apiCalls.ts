@@ -1,5 +1,6 @@
 import axios from "axios";
 import { iMember } from "../data/types";
+import { logger } from "./logger";
 const currentSession = 117;
 
 export const getMembersByDistrict = async (
@@ -58,8 +59,6 @@ export const makePropublicaCall = async (endpoint: string) => {
     const response = await axios.request(options);
     return response.data;
   } catch (error) {
-    // Need logging service to handle errors
-    //eslint-disable-next-line no-console
-    console.error(error);
+    logger.error(error);
   }
 };
