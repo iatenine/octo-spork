@@ -4,11 +4,11 @@
   "description": "Enable users to quickly and intuitively find information regarding their local representatives, upcoming elections, voting patterns and other civic information",
   "main": "server.js",
   "scripts": {
-    "start": "npm run build && node -r dotenv/config ./dist/server.js",
+    "start": "npm i && npm run build && node -r dotenv/config ./dist/server.js",
     "dev": "npx ts-node -r dotenv/config ./src/server",
     "test": "jest",
     "lint": "npx eslint . --fix",
-    "build": "npx  --package=typescript -- tsc",
+    "build": "npx --package=typescript -- tsc",
     "prepare": "husky install",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
