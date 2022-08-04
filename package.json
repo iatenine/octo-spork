@@ -8,7 +8,7 @@
     "dev": "npx ts-node -r dotenv/config ./src/server",
     "test": "jest",
     "lint": "npx eslint . --fix",
-    "build": "npx  --package=typescript -- tsc",
+    "build": "tsc",
     "prepare": "husky install",
     "postinstall": "husky install",
     "prepack": "pinst --disable",

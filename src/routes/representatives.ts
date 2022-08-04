@@ -5,7 +5,9 @@ import {
   getRepresentativeById,
 } from "../services/representatives";
 const router = express.Router();
-import { logger } from "../utils/logger";
+import Logger from "../utils/logger";
+
+const { logger } = Logger;
 
 router.get("/", async (req, res) => {
   try {
@@ -26,7 +28,7 @@ router.get("/:id", async (req, res) => {
     res.json(response);
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error(error);
+    logger.error(error);
     res.status(400).json({
       message: "Something went wrong. Please rveiw your request",
       query: req.query,

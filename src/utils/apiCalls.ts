@@ -1,7 +1,9 @@
 import axios from "axios";
 import { iMember } from "../data/types";
-import { logger } from "./logger";
+import Logger from "../utils/logger";
 const currentSession = 117;
+
+const { logger } = Logger;
 
 export const getMembersByDistrict = async (
   inputState: string,
