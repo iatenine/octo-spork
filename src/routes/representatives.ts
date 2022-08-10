@@ -36,4 +36,14 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.post("/:id", async (req, res) => {
+  try {
+    const ret = await getRepresentatives(req.body);
+    res.json(ret);
+  } catch (error) {
+    console.error(error);
+    res.status(400).json(`Something went wrong`);
+  }
+});
+
 export { router };
