@@ -20,10 +20,18 @@ regarding public servants representing a user
 
 # Installation
 
-To run a local instance of this server, simply clone the repo, run
-`npm install` to install dependencies and `npm run start` to build
-and start a local server or `npm run dev` to start the server directly
-from the `src` files (useful for debugging)
+To configure a local instance of this server, clone the repo and follow the steps below:
+
+- Obtain API keys from [ProPublica](https://www.propublica.org/datastore/api/propublica-congress-api) and [FEC](https://api.open.fec.gov/developers)
+- Run `npm install` to install dependencies
+- Create `.env` at the the project root with the following structure
+
+```
+PROPUBLICA_KEY=<your ProPublica API key>
+FEC_KEY=<your FEC API key>
+```
+
+- Run either `npm run start` to build `/dist` and run the generated files or `npm run dev` to run the `/src` files directly without a build step (useful for debugging)
 
 # Usage
 

@@ -1,6 +1,9 @@
 import axios from "axios";
 import { iMember } from "../data/types";
+import Logger from "../utils/logger";
 const currentSession = 117;
+
+const { logger } = Logger;
 
 export const getMembersByDistrict = async (
   inputState: string,
@@ -40,6 +43,12 @@ export const getChamberMembers = async (
   return data.results[0].members;
 };
 
+export const getMemberVotes = async (id: string) => {
+  const endpoint = `congress/v1/members/${id}/votes.json`;
+  const response = await makePropublicaCall(endpoint);
+  return response.results;
+};
+
 export const makePropublicaCall = async (endpoint: string) => {
   const options = {
     method: "GET",
@@ -52,8 +61,6 @@ export const makePropublicaCall = async (endpoint: string) => {
     const response = await axios.request(options);
     return response.data;
   } catch (error) {
-    // Need logging service to handle errors
-    //eslint-disable-next-line no-console
-    console.error(error);
+    logger.error(error);
   }
 };
