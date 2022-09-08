@@ -8,9 +8,6 @@ jest.mock("../src/services/representatives", () => {
       if (query?.state && query?.state.length !== 2) throw new Error();
       return [{}];
     }),
-    getRepresentativeById: jest.fn(() => {
-      return [];
-    }),
   };
 });
 
@@ -32,19 +29,5 @@ describe("endpoint smoke tests", () => {
     const res = await frisby.get(endpoint);
     expect(res.status).toBe(200);
     expect(res.status).not.toBe(203);
-  });
-
-  it("/representatives/:memberId should exist", async function () {
-    const endpoint = `${HOST}:${PORT}/representatives/4`;
-    const res = await frisby.get(endpoint);
-    expect(res.status).toBe(200);
-    expect(res.status).not.toBe(203);
-  });
-
-  it("should return a 400 when state input causes an error", async function () {
-    const endpoint = `${HOST}:${PORT}/representatives/?state=FLD`;
-    const res = await frisby.get(endpoint);
-
-    expect(res.status).toBe(400);
   });
 });
