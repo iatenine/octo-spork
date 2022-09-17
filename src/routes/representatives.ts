@@ -8,6 +8,7 @@ const { logger } = Logger;
 router.get("/", async (req, res) => {
   try {
     const ret = await getRepresentatives({ ...req.query, in_office: true });
+    res.setHeader("Access-Control-Allow-Origin", "*");
     res.json(ret);
   } catch (error) {
     logger.error(error);
