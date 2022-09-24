@@ -1,5 +1,5 @@
 import axios from "axios";
-import Representative from "../models/Representative";
+import { Representative } from "../models";
 import Logger from "../utils/logger";
 const currentSession = 117;
 
@@ -9,7 +9,6 @@ export const getChamberMembers = async (chamber: "house" | "senate") => {
   const regex = chamber === "senate" ? /senator/i : /representative/i;
   const results = Representative.find({
     title: { $regex: regex },
-    in_office: true,
   });
   return results;
 };
