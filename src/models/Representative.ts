@@ -103,8 +103,20 @@ const representativeModel = new Schema({
   at_large: {
     type: Boolean,
   },
+  voting_records: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "VotingRecord",
+    },
+  ],
+  finances: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "finances"
+    }
+  ]
 });
 
-const Representative = model("Representative", representativeModel);
+const Representative = model("representative", representativeModel);
 
 export default Representative;
