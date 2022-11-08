@@ -5,8 +5,22 @@ import { fetchChamberMembers, getMemberVotes } from "../utils/apiCalls";
 import Logger from "../utils/logger";
 const { logger } = Logger;
 
-export const getRepresentatives = async (query: object): Promise<Document[]> =>
-  await Representative.find(query);
+type query = {
+  state?: string,
+  district?: string
+}
+
+export const getRepresentatives = async (query: query): Promise<Document[]> =>
+  await Representative.find({$or: [
+    {$and: [
+      {title: 
+        {$regex:/senator/i}
+      },
+      {
+        state: query?.state
+      } 
+    ]},
+    query ]});
 
 export const fetchAllMembers = async () => {
   const senators = await fetchChamberMembers("senate");
