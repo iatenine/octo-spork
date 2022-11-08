@@ -112,9 +112,9 @@ const representativeModel = new Schema({
   finances: [
     {
       type: Schema.Types.ObjectId,
-      ref: "finances"
-    }
-  ]
+      ref: "finances",
+    },
+  ],
 });
 
 const Representative = model("representative", representativeModel);
